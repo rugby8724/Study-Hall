@@ -1,0 +1,22 @@
+<%- include('../views/includes/head.ejs') %> 
+</head>
+<body>
+
+  <main>
+      <div>
+        <h4>Confirm you want to delete the question below</h4>
+        <div>
+          <p>Section: <%= question.section %>  Topic: <%= question.topic %> Id: <%= question.id %>  </p>
+        </div>
+          <header>
+            <h3><%= question.question %></h3>
+          </header>
+        <form class="delete-question-form" action="/delete-question/<%=question.id%>" method="POST">
+        <button class="btn btn-sm btn-danger" type="submit">Confirm</button>
+       </form>
+       <a class="btn btn-sm btn-primary" href="/all-questions">Cancel</a> 
+      </div>
+     
+  </main>
+  
+  <%- include('../views/includes/end.ejs') %> 

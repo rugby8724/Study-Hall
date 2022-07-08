@@ -1,0 +1,22 @@
+<%- include('../views/includes/head.ejs') %> 
+</head>
+<body>
+  <main>
+    <form class="add-question-form" action="/add-question" method="POST">
+      <div>
+        <label for="question">Question</label>
+        <textarea name="question" id="question" cols="30" rows="10"></textarea>
+      </div>
+      <div>
+        <label for="topic">Topic</label>
+        <input type="text" name="topic" id="topic">
+      </div>
+      <div>
+        <label for="section">Section</label>
+        <input type="number" name="section" id="section">
+      </div>
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </main>
+  
+  <%- include('../views/includes/end.ejs') %> 

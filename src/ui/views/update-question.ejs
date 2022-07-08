@@ -1,0 +1,23 @@
+<%- include('../views/includes/head.ejs') %> 
+</head>
+<body>
+  <main>
+    <form class="update-question-form" action="/update-question/<%=question.id%>" method="POST">
+      <div>
+        <label for="question">Question</label>
+        <textarea name="question" id="question" cols="30" rows="10"><%=question.question%></textarea>
+      </div>
+      <div>
+        <label for="topic">Topic</label>
+        <input type="text" name="topic" id="topic" value="<%=question.topic%>" >
+      </div>
+      <div>
+        <label for="section">Section</label>
+        <input type="number" name="section" id="section" value="<%=question.section%>">
+      </div>
+      <button class="btn btn-info" type="submit">Submit</button>
+    </form>
+    <a class="btn btn-warning" href="/all-questions">Cancel</a>
+  </main>
+  
+  <%- include('../views/includes/end.ejs') %> 

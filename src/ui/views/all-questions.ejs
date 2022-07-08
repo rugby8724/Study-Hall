@@ -1,0 +1,27 @@
+<%- include('../views/includes/head.ejs') %> 
+</head>
+<body>
+
+  <main>
+    <% if (questions.length >0) { %>
+     <div>
+       <% questions.forEach(question => { %>
+
+        <div>
+          <p>Section: <%= question.section %>  Topic: <%= question.topic %> Id: <%= question.id %>  </p>
+        </div>
+          <header>
+            <h3><%= question.question %></h3>
+          </header>
+          <div>
+          <a class="btn btn-sm btn-primary" href="/update-question/<%=question.id%> ">Edit</a>
+          <a class="btn btn-sm btn-danger" href="/delete-question/<%=question.id%> ">Delete</a>
+        </div>
+       <% }) %>
+      </div>
+       
+    <% } %>
+     
+  </main>
+  
+  <%- include('../views/includes/end.ejs') %> 
