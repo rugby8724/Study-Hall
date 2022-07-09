@@ -1,0 +1,17 @@
+<%- include('../views/includes/head.ejs') %> 
+</head>
+<body>
+  <%- include('../views/includes/nav.ejs') %> 
+  <form class="add-question-form" action="/sign-up" method="POST">
+    <div>
+      <label for="user">Enter Username</label>
+      <input type="user" name="user" id="user" required>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+
+<%- include('../views/includes/end.ejs') %> 

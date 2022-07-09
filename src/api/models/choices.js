@@ -25,11 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     correct:{
       type: DataTypes.BOOLEAN,
-      allowNull: false,
-      validate: {
-        notNull: { msg: 'correct must have content' },
-        notEmpty: { msg: 'correct  must not be empty' },
-      }
+      allowNull: true
     } 
   }, {
     sequelize,

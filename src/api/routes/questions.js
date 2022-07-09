@@ -9,6 +9,8 @@ router.get('/add-question', questionController.getAddQuestion)
 router.get('/all-questions', questionController.getAllQuestions)
 router.get('/delete-question/:id', questionController.getDeleteQuestion)
 router.get('/update-question/:id', questionController.getUpdateQuestion)
+router.get('/all-choices', questionController.getAllChoices)
+router.get('/section/:section', questionController.getBySection)
 
 router.post('/add-question', questionController.postAddQuestion)
 router.post('/delete-question/:id', questionController.postDeleteQuestion)

@@ -1,25 +1,21 @@
 'use strict';
 module.exports = {
   async up(queryInterface, DataTypes) {
-    await queryInterface.createTable('choices', {
+    await queryInterface.createTable('user', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER
       },
-      choice: {
-        type: DataTypes.TEXT,
-        allowNull: false
-      },
-      correct: {
-        type: DataTypes.BOOLEAN,
-        allowNull: true
-      },
-      questionId: {
-        type: DataTypes.INTEGER,
+      username: {
+        type: DataTypes.STRING,
         allowNull: false,
-        foreignKey: true
+        unique: true
+      },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
@@ -32,6 +28,6 @@ module.exports = {
     });
   },
   async down(queryInterface, DataTypes) {
-    await queryInterface.dropTable('Choices');
+    await queryInterface.dropTable('Users');
   }
 };
