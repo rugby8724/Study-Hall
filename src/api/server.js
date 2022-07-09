@@ -4,6 +4,7 @@ const express = require('express')
 
 const {sequelize} = require(path.join(__dirname, './models'))
 const questionRoutes = require(path.join(__dirname, './routes/questions'))
+const userRoutes = require(path.join(__dirname, './routes/users'))
 
 require('dotenv').config({path: path.join(__dirname, '.env')})
 
@@ -18,6 +19,7 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, '../ui/public')))
 
 app.use(questionRoutes)
+app.use(userRoutes)
 
 
 app.listen(process.env.PORT, async () => {

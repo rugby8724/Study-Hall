@@ -1,6 +1,7 @@
 <%- include('../views/includes/head.ejs') %> 
 </head>
 <body>
+  <%- include('../views/includes/nav.ejs') %> 
   <main>
     <form class="update-question-form" action="/update-question/<%=question.id%>" method="POST">
       <div>
@@ -15,6 +16,17 @@
         <label for="section">Section</label>
         <input type="number" name="section" id="section" value="<%=question.section%>">
       </div>
+      <% if (choices.length > 0) { %>
+        <% choices.forEach((choice, choiceIndex) => { %>
+          <div>
+            <label for="choice<%=choiceIndex%>">Choice<%=choiceIndex%></label>
+            <textarea name="choice<%=choiceIndex%>" id="choice<%=choiceIndex%>" cols="30" rows="2" required><%=choice.choice%></textarea>
+            <label for="correct<%=choiceIndex%>">Result</label>
+            <input type="text" name="correct<%=choiceIndex%>" value="<%=choice.correct%>">
+            <input type="hidden" name="choiceId<%=choiceIndex%>" value="<%=choice.id%>">
+          </div>
+        <% }) %>
+      <% } %>
       <button class="btn btn-info" type="submit">Submit</button>
     </form>
     <a class="btn btn-warning" href="/all-questions">Cancel</a>

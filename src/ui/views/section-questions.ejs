@@ -5,29 +5,20 @@
   <main>
     <% if (questions.length >0) { %>
      <div>
-       <% questions.forEach(question => { %>
-
-        <div>
-          <p>Section: <%= question.section %>  Topic: <%= question.topic %> Id: <%= question.id %>  </p>
-        </div>
-        
+       <% questions.forEach(question => { %>        
           <header>
             <h3><%= question.question %></h3>
           </header>
           <% choices.forEach(choice => { %>
             <% if (choice.questionId == question.id) { %>
               <div>
-                <h6>Choice: <%=choice.choice%></h6>
-                <p>Correct: <%=choice.correct%></p>
+                <h6><%=choice.choice%></h6>
               </div>
             <% } %>
           <% }) %>
-          <div>
-          <a class="btn btn-sm btn-primary" href="/update-question/<%=question.id%> ">Edit</a>
-          <a class="btn btn-sm btn-danger" href="/delete-question/<%=question.id%> ">Delete</a>
-        </div>
        <% }) %>
       </div>
+      <br>
        
     <% } %>
      

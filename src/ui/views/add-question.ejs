@@ -1,21 +1,58 @@
 <%- include('../views/includes/head.ejs') %> 
 </head>
 <body>
+  <%- include('../views/includes/nav.ejs') %> 
   <main>
     <form class="add-question-form" action="/add-question" method="POST">
       <div>
         <label for="question">Question</label>
-        <textarea name="question" id="question" cols="30" rows="10"></textarea>
+        <textarea name="question" id="question" cols="30" rows="7" required></textarea>
       </div>
       <div>
         <label for="topic">Topic</label>
-        <input type="text" name="topic" id="topic">
+        <input type="text" name="topic" id="topic" required>
       </div>
       <div>
         <label for="section">Section</label>
-        <input type="number" name="section" id="section">
+        <input type="number" name="section" id="section" required>
       </div>
-      <button class="btn" type="submit">Submit</button>
+      <div>
+        <label for="choiceOne">Choice 1</label>
+        <textarea name="choiceOne" id="choiceOne" cols="30" rows="2" required></textarea>
+        <label for="correctOne">Result</label>
+        <select name="correctOne" id="correctOne">
+          <option value="false">Incorrect Answer</option>
+          <option value="true">Correct Answer</option>
+        </select>
+      </div>
+      <div>
+        <label for="choiceTwo">Choice 2</label>
+        <textarea name="choiceTwo" id="choiceTwo" cols="30" rows="2" required></textarea>
+        <label for="correctTwo">Result</label>
+        <select name="correctTwo" id="correctTwo">
+          <option value="false">Incorrect Answer</option>
+          <option value="true">Correct Answer</option>
+        </select>
+      </div>
+      <div>
+        <label for="choiceThree">Choice 3</label>
+        <textarea name="choiceThree" id="choiceThree" cols="30" rows="2" required></textarea>
+        <label for="corretcThree">Result</label>
+        <select name="correctThree" id="correctThree">
+          <option value="false">Incorrect Answer</option>
+          <option value="true">Correct Answer</option>
+        </select>
+      </div>
+      <div>
+        <label for="choiceFour">Choice 4</label>
+        <textarea name="choiceFour" id="choiceFour" cols="30" rows="2" required></textarea>
+        <label for="correctFour">Result</label>
+        <select name="correctFour" id="correctFour">
+          <option value="false">Incorrect Answer</option>
+          <option value="true">Correct Answer</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit">Submit</button>
     </form>
   </main>
   
