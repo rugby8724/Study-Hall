@@ -16,5 +16,4 @@ router.post('/add-question', questionController.postAddQuestion)
 router.post('/delete-question/:id', questionController.postDeleteQuestion)
 router.post('/update-question/:id', questionController.postUpdateQuestion)
 
-
 module.exports = router
